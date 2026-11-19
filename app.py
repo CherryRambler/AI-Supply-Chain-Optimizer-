@@ -140,8 +140,8 @@ def show_png(path: Path, caption: str) -> None:
 
 
 def style(fig: go.Figure, height: int = 380, **kw) -> go.Figure:
-    fig.update_layout(height=height, margin=dict(l=10, r=10, t=40, b=10), template="plotly_white", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-                      font=dict(color=INK), legend=dict(orientation="h", y=-0.2), **kw)
+    fig.update_layout(height=height, margin=dict(l=10, r=10, t=40, b=10), template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                      font=dict(color="#e6e8eb"), legend=dict(orientation="h", y=-0.2), **kw)
     return fig
 
 
@@ -387,7 +387,7 @@ def page_regimes() -> None:
         order = [next(i for i, n in names.items() if n == reg) for reg in REGIME_ORDER]
         tm = np.asarray(hmm["hmm"].transmat_)[np.ix_(order, order)]      # reorder to Normal, Monsoon, Festival
         z = pd.DataFrame(tm, index=[f"from {r}" for r in REGIME_ORDER], columns=[f"to {r}" for r in REGIME_ORDER])
-        heat = px.imshow(z, text_auto=".3f", color_continuous_scale=["#f4f7fc", BLUE, NAVY], zmin=0, zmax=1,
+        heat = px.imshow(z, text_auto=".3f", color_continuous_scale=["#16222f", BLUE, "#8fc0ff"], zmin=0, zmax=1,
                          aspect="auto")
         heat.update_layout(title="Transition matrix (probability of tomorrow's regime)",
                            xaxis_title="Tomorrow's regime", yaxis_title="Today's regime",
@@ -427,8 +427,8 @@ def page_comparison() -> None:
     left, right = st.columns([1, 1.4])
     with left:
         st.markdown("##### Test metrics")
-        st.dataframe(shown.style.format("{:.3f}").highlight_min(subset=["MAE", "RMSE"], color="#d8f0e6")
-                     .highlight_max(subset=["R²"], color="#d8f0e6"), width="stretch")
+        st.dataframe(shown.style.format("{:.3f}").highlight_min(subset=["MAE", "RMSE"], color="rgba(27,175,122,.35)")
+                     .highlight_max(subset=["R²"], color="rgba(27,175,122,.35)"), width="stretch")
         if "Gradient Boosting (original features)" in comp.index:
             st.caption(f"Gradient boosting on the original features (no growth-free target): "
                        f"MAE {comp.loc['Gradient Boosting (original features)', 'MAE']:.2f}.")
