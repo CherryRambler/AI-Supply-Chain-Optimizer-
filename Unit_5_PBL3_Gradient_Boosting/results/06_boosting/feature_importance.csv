@@ -1,0 +1,12 @@
+,impurity importance,permutation importance
+area_Student / PG Hub,0.0001,0.0
+monsoon,0.0005,-0.0
+area_Residential,0.0027,0.0
+area_Premium Residential,0.0034,0.0
+r1,0.0159,-0.0
+r2,0.0584,0.0001
+store_age_w,0.0819,0.0002
+woy,0.1235,-0.0
+r4,0.166,-0.0002
+roll4,0.2097,0.0013
+festival_days,0.3379,0.0077

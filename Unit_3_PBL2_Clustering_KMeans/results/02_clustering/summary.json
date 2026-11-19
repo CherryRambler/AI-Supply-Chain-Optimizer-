@@ -1,0 +1,14 @@
+{
+  "k": 3,
+  "silhouette": 0.4193,
+  "davies_bouldin": 0.8959,
+  "calinski_harabasz": 57.1718,
+  "stability_ari": 0.851,
+  "fit_time_ms": 18.5,
+  "n_stores": 58,
+  "cluster_sizes": {
+    "Family residential stores": 42,
+    "Late-night snack hubs": 11,
+    "Daytime office stores": 5
+  }
+}

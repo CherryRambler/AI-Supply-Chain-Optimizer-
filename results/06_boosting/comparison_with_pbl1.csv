@@ -1,0 +1,7 @@
+,MAE,RMSE,R²,WAPE
+Naive (last week),6.761,8.918,0.644,0.207
+Linear Regression,5.353,6.97,0.782,0.164
+Ridge Regression,5.353,6.97,0.782,0.164
+Bayesian Regression,5.356,6.975,0.782,0.164
+Gradient Boosting (original features),5.917,8.05,0.71,0.181
+Gradient Boosting (growth-free target),5.315,6.939,0.784,0.163

@@ -1,0 +1,11 @@
+,Linear,Ridge,Bayesian
+lag1,0.101,0.101,0.327
+lag2,0.458,0.458,0.679
+lag4,0.393,0.393,0.616
+roll4,8.415,8.415,7.79
+store_age_w,-0.302,-0.302,-0.292
+festival_days,1.875,1.875,1.87
+monsoon,0.202,0.202,0.198
+area_Premium Residential,-0.056,-0.056,-0.061
+area_Residential,-0.106,-0.106,-0.114
+area_Student / PG Hub,0.152,0.152,0.151

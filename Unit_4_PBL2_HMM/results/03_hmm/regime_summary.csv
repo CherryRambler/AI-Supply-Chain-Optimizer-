@@ -1,0 +1,4 @@
+state,orders,demand_index,late_rate,rain_share
+Normal,155.1765,0.003,0.2254,0.0877
+Monsoon / disrupted,204.7209,0.0026,0.3228,0.5164
+Festival peak,224.9565,0.3567,0.2959,0.1853

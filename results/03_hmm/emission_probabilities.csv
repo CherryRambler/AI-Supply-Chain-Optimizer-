@@ -1,0 +1,4 @@
+,demand low (< −10%),demand normal,demand high (> +15%),late < 25%,late 25–30%,late > 30%
+Normal,0.146,0.7649,0.0891,0.6999,0.2402,0.0599
+Monsoon / disrupted,0.1364,0.78,0.0837,0.0831,0.2495,0.6674
+Festival peak,0.0948,0.2212,0.684,0.2001,0.3276,0.4722

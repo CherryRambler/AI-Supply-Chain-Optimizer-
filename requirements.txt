@@ -1,0 +1,15 @@
+# Python 3.12 recommended (3.11 and 3.13 also work). Exact versions the project results were produced with.
+numpy==2.5.3
+pandas==3.0.5
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+hmmlearn==0.3.3
+joblib==1.6.0
+# running the notebooks
+jupyter
+ipykernel
+nbconvert
+# web app (streamlit run app.py)
+streamlit==1.67.0
+plotly==7.1.0

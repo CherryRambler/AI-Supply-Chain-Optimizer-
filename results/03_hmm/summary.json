@@ -1,0 +1,13 @@
+{
+  "n_states": 3,
+  "log_likelihood": 1465.68,
+  "bic": -2802.2,
+  "fit_time_s": 0.72,
+  "switches": 19,
+  "mean_certainty": 0.9766,
+  "festival_recall": 0.8182,
+  "false_peaks": 5,
+  "oos_hmm": 2.5007,
+  "oos_gmm": 2.1816,
+  "oos_single": 2.0172
+}

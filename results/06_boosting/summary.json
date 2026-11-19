@@ -1,0 +1,33 @@
+{
+  "best_params": {
+    "learning_rate": 0.02,
+    "max_depth": 2,
+    "n_estimators": 200
+  },
+  "search_time_s": 50.0,
+  "noise_floor_mae": 4.338,
+  "Naive (last week)|MAE": 6.7606,
+  "Naive (last week)|RMSE": 8.918,
+  "Naive (last week)|R\u00b2": 0.6437,
+  "Naive (last week)|WAPE": 0.2069,
+  "Linear Regression|MAE": 5.3529,
+  "Linear Regression|RMSE": 6.97,
+  "Linear Regression|R\u00b2": 0.7824,
+  "Linear Regression|WAPE": 0.1639,
+  "Ridge Regression|MAE": 5.3529,
+  "Ridge Regression|RMSE": 6.97,
+  "Ridge Regression|R\u00b2": 0.7824,
+  "Ridge Regression|WAPE": 0.1639,
+  "Bayesian Regression|MAE": 5.3556,
+  "Bayesian Regression|RMSE": 6.9752,
+  "Bayesian Regression|R\u00b2": 0.782,
+  "Bayesian Regression|WAPE": 0.1639,
+  "Gradient Boosting (original features)|MAE": 5.9165,
+  "Gradient Boosting (original features)|RMSE": 8.05,
+  "Gradient Boosting (original features)|R\u00b2": 0.7097,
+  "Gradient Boosting (original features)|WAPE": 0.1811,
+  "Gradient Boosting (growth-free target)|MAE": 5.3152,
+  "Gradient Boosting (growth-free target)|RMSE": 6.939,
+  "Gradient Boosting (growth-free target)|R\u00b2": 0.7843,
+  "Gradient Boosting (growth-free target)|WAPE": 0.1627
+}

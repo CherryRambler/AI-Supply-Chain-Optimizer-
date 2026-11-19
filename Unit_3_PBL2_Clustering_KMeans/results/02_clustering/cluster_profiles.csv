@@ -1,0 +1,14 @@
+,Family residential stores,Late-night snack hubs,Daytime office stores
+orders_per_day,3.61,4.41,3.88
+night_share,23.96,37.67,15.21
+morning_share,18.43,8.98,14.56
+share_fruit_veg,47.13,40.02,51.15
+share_snacks_bev,61.64,68.67,60.21
+share_dairy_bread_eggs,58.24,50.99,60.35
+share_atta_rice_dal,30.06,25.63,33.31
+share_icecream_desserts,23.65,28.97,23.2
+share_instant_frozen,41.76,45.74,41.69
+avg_basket_value,445.02,440.34,459.24
+late_rate,27.93,26.75,28.23
+complaint_rate,5.04,4.96,4.62
+stockout_rate,12.94,12.65,12.47

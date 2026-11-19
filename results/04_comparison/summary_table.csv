@@ -1,0 +1,8 @@
+,K-Means (stores),HMM (days)
+data,58 stores × 10 features,638 days × 2 observations
+groups found,3 clusters,3 states
+quality score,silhouette 0.42,"BIC -2,802 (lowest)"
+reliability,stability ARI 0.85,mean certainty 97.7%
+external check,100% match with location type,festival recall 82%
+unseen-data test,not applicable,log-lik. 2.50 vs 2.18 without transitions
+training time,32 ms,0.7 s

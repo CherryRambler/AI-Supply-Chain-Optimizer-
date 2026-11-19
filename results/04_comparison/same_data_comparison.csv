@@ -1,0 +1,8 @@
+,K-Means on days,Gaussian Mixture,HMM
+regime switches,251.0,270.0,19.0
+average run length (days),2.5317,2.3542,31.9
+festival days in peak group,0.9545,0.7727,0.8182
+regular days in peak group,61.0,2.0,5.0
+Jun–Sep days in disrupted group,0.75,0.6148,0.9467
+silhouette (standardised obs.),0.3858,0.3225,0.2544
+log-likelihood per unseen 2026 day,,2.1816,2.5007

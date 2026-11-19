@@ -1,0 +1,40 @@
+group,column,dtype,missing,unique,example
+Order & time,order_id,str,0,195148,QC50000001
+Order & time,order_datetime,datetime64[us],0,166334,2025-01-01 00:02:00
+Order & time,order_date,datetime64[us],0,638,2025-01-01 00:00:00
+Order & time,order_hour,int64,0,24,0
+Order & time,day_of_week,str,0,7,Wednesday
+Location,city,str,0,12,Delhi NCR
+Location,store_id,str,0,58,DS019
+Location,area_type,str,0,4,Residential
+Location,distance_km,float64,0,621,0.94
+Customer,customer_id,str,0,46804,CU011436
+Customer,is_first_order,bool,0,2,True
+Customer,is_member,bool,0,2,False
+Customer,customer_rating,float64,122204,5,4.0
+Context,event,str,0,9,New Year's Day
+Context,weather,str,0,4,Clear
+Context,temperature_c,float64,0,323,15.9
+Basket,items_count,int64,0,16,5
+Basket,n_categories,int64,0,10,3
+Basket,primary_category,str,0,14,Snacks & Beverages
+Basket,basket_categories,str,0,4262,Snacks & Beverages; Instant & Frozen Food; Ice Cream & Desserts
+Basket,has_fresh_items,bool,0,2,False
+Basket,items_out_of_stock,int64,0,6,0
+Money (₹),item_total,float64,0,2259,413.0
+Money (₹),discount,float64,0,370,51.0
+Money (₹),delivery_fee,float64,0,3,0.0
+Money (₹),handling_fee,float64,0,3,4.0
+Money (₹),small_cart_fee,float64,0,2,0.0
+Money (₹),surge_fee,float64,0,3,15.0
+Money (₹),rider_tip,float64,0,5,0.0
+Money (₹),refund_out_of_stock,float64,0,524,0.0
+Money (₹),total_paid,float64,0,2060,381.0
+Money (₹),payment_method,str,0,5,UPI
+Delivery & outcome,promised_minutes,int64,0,9,10
+Delivery & outcome,actual_delivery_minutes,float64,3143,442,5.7
+Delivery & outcome,is_late,float64,3143,2,0.0
+Delivery & outcome,rider_id,str,0,1450,R019-16
+Delivery & outcome,order_status,str,0,3,Delivered
+Delivery & outcome,cancel_reason,str,192005,5,Delivery taking too long
+Delivery & outcome,complaint_type,str,185367,6,Item missing

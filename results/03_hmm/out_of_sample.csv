@@ -1,0 +1,4 @@
+,test log-likelihood per day
+"HMM (3 states, with transitions)",2.5007
+"Gaussian Mixture (3 states, no transitions)",2.1816
+Single Gaussian (no states),2.0172

@@ -1,0 +1,23 @@
+{
+  "split": "30-03-2026",
+  "train_rows": 2531,
+  "test_rows": 1508,
+  "ridge_alpha": 0.001,
+  "bayes_coverage_95": 0.906498673740053,
+  "Naive (last week)|MAE": 6.7606,
+  "Naive (last week)|RMSE": 8.918,
+  "Naive (last week)|R\u00b2": 0.6437,
+  "Naive (last week)|WAPE": 0.2069,
+  "Linear Regression|MAE": 5.3529,
+  "Linear Regression|RMSE": 6.97,
+  "Linear Regression|R\u00b2": 0.7824,
+  "Linear Regression|WAPE": 0.1639,
+  "Ridge Regression|MAE": 5.3529,
+  "Ridge Regression|RMSE": 6.97,
+  "Ridge Regression|R\u00b2": 0.7824,
+  "Ridge Regression|WAPE": 0.1639,
+  "Bayesian Regression|MAE": 5.3556,
+  "Bayesian Regression|RMSE": 6.9752,
+  "Bayesian Regression|R\u00b2": 0.782,
+  "Bayesian Regression|WAPE": 0.1639
+}

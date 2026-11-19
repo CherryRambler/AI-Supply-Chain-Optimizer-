@@ -1,0 +1,23 @@
+date,event,demand_index,state,p_state
+01-01-2025,New Year's Day,-0.116,Normal,1.0
+13-02-2025,Valentine's Day,0.255,Festival peak,0.849
+14-02-2025,Valentine's Day,0.414,Festival peak,0.955
+13-03-2025,Holi,0.521,Festival peak,1.0
+14-03-2025,Holi,0.398,Festival peak,0.999
+07-08-2025,Raksha Bandhan,0.365,Festival peak,0.984
+08-08-2025,Raksha Bandhan,0.284,Festival peak,0.97
+09-08-2025,Raksha Bandhan,0.185,Festival peak,0.743
+17-10-2025,Diwali,0.65,Festival peak,1.0
+18-10-2025,Diwali,0.772,Festival peak,1.0
+19-10-2025,Diwali,0.656,Festival peak,1.0
+20-10-2025,Diwali,0.573,Festival peak,1.0
+25-12-2025,Christmas,0.178,Normal,0.997
+31-12-2025,New Year's Eve,0.387,Festival peak,0.977
+01-01-2026,New Year's Day,0.32,Festival peak,0.943
+13-02-2026,Valentine's Day,0.304,Normal,0.743
+14-02-2026,Valentine's Day,0.253,Normal,0.894
+03-03-2026,Holi,0.602,Festival peak,1.0
+04-03-2026,Holi,0.666,Festival peak,1.0
+26-08-2026,Raksha Bandhan,0.336,Festival peak,0.993
+27-08-2026,Raksha Bandhan,0.481,Festival peak,1.0
+28-08-2026,Raksha Bandhan,0.547,Festival peak,1.0
