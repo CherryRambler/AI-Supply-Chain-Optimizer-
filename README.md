@@ -74,6 +74,8 @@ part of a table or chart above are printed in the last section of each notebook,
 3. Run all cells; run the notebooks in the order above.
 
 ## Web app
+**Live app:** https://train-consist-management-app-ai-3xqjctuvkqvqztrz9p7euv.streamlit.app/
+
 After creating the environment (step 1), start the dashboard with:
 
 ```

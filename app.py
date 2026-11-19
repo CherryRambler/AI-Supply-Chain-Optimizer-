@@ -49,25 +49,52 @@ st.set_page_config(page_title="AI Supply Chain Optimizer", page_icon="🛵", lay
 st.markdown(
     f"""
     <style>
-      .block-container {{ padding-top: 1.2rem; max-width: 1250px; }}
-      .app-header {{ background: linear-gradient(90deg, {NAVY} 0%, {BLUE} 100%); color: #fff;
-                    padding: 1.1rem 1.6rem; border-radius: 12px; margin-bottom: 1.2rem; }}
-      .app-header h1 {{ color: #fff; font-size: 1.7rem; margin: 0; padding: 0; }}
-      .app-header p  {{ color: #dbe8fb; margin: .25rem 0 0 0; font-size: .95rem; }}
-      .big-number {{ font-size: 3.4rem; font-weight: 700; color: {ORANGE}; line-height: 1.05; }}
-      .big-caption {{ color: {MUTED}; font-size: .95rem; }}
-      div[data-testid="stMetric"] {{ background: rgba(42,120,214,.10); border: 1px solid rgba(42,120,214,.25);
-                                    border-left: 5px solid {BLUE}; padding: .6rem .9rem; border-radius: 8px; }}
+      #MainMenu, footer {{ visibility: hidden; }}
+      .block-container {{ padding-top: 1.4rem; max-width: 1250px; }}
+      h5 {{ margin-top: .4rem; padding-bottom: .25rem; border-bottom: 2px solid rgba(42,120,214,.25); }}
+      .app-header {{ background: linear-gradient(110deg, {NAVY} 0%, #1d4f9c 55%, {BLUE} 100%); color: #fff;
+                    padding: 1.3rem 1.8rem; border-radius: 16px; margin-bottom: 1.4rem;
+                    box-shadow: 0 6px 18px rgba(18,48,92,.28); }}
+      .app-header .kicker {{ letter-spacing: .12em; font-size: .72rem; font-weight: 600; color: #a9c8f5;
+                            text-transform: uppercase; }}
+      .app-header h1 {{ color: #fff; font-size: 2rem; margin: .15rem 0 0 0; padding: 0; }}
+      .app-header p  {{ color: #dbe8fb; margin: .3rem 0 0 0; font-size: .98rem; }}
+      .pill {{ display: inline-block; background: rgba(255,255,255,.16); color: #fff; border-radius: 999px;
+              padding: .12rem .7rem; font-size: .75rem; margin: .7rem .4rem 0 0; }}
+      .hero {{ background: linear-gradient(160deg, rgba(235,104,52,.16), rgba(235,104,52,.04));
+              border: 1px solid rgba(235,104,52,.35); border-radius: 16px; padding: 1.1rem 1.3rem; }}
+      .hero .label {{ font-size: .85rem; color: {MUTED}; text-transform: uppercase; letter-spacing: .08em; }}
+      .big-number {{ font-size: 4rem; font-weight: 800; color: {ORANGE}; line-height: 1.05; }}
+      .big-caption {{ color: {MUTED}; font-size: .92rem; }}
+      div[data-testid="stMetric"] {{ background: rgba(42,120,214,.10); border: 1px solid rgba(42,120,214,.22);
+                                    border-left: 5px solid {BLUE}; padding: .65rem 1rem; border-radius: 10px; }}
+      div[data-testid="stMetricValue"] {{ font-weight: 700; }}
+      div[data-testid="stMetric"] {{ min-height: 6.2rem; }}
+      section[data-testid="stSidebar"] {{ border-right: 1px solid rgba(42,120,214,.25); }}
+      .side-brand {{ font-weight: 800; font-size: 1.15rem; color: {BLUE}; margin-bottom: .1rem; }}
+      .side-sub {{ color: {MUTED}; font-size: .8rem; margin-bottom: .8rem; }}
+      div[data-testid="stPlotlyChart"], div[data-testid="stDataFrame"] {{ border-radius: 10px; }}
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+PAGE_SUBTITLES = {
+    "Demand Forecast": "Weekly orders per dark store — gradient boosting on a growth-free target",
+    "Store Types (K-Means)": "Unit 3 · K-Means groups the 58 stores into 3 types (PCA only draws the picture)",
+    "Demand Regimes (HMM)": "Unit 4 · A Hidden Markov Model decodes Normal, Monsoon and Festival days",
+    "Model Comparison": "Unit 5 · Naive vs regression vs gradient boosting on the held-out test weeks",
+    "About": "Project, dataset, team and methods",
+}
 
-def header(subtitle: str) -> None:
+
+def header(_subtitle: str = "") -> None:
+    page = st.session_state.get("nav", "Demand Forecast")
     st.markdown(
-        f'<div class="app-header"><h1>AI Supply Chain Optimizer — Indian Quick-Commerce Food Demand</h1>'
-        f"<p>{subtitle}</p></div>",
+        f'<div class="app-header"><div class="kicker">AI Supply Chain Optimizer · Indian Quick-Commerce Food Demand</div>'
+        f"<h1>{page}</h1><p>{PAGE_SUBTITLES.get(page, '')}</p>"
+        '<span class="pill">58 dark stores</span><span class="pill">Kaggle · 2025-2026</span>'
+        '<span class="pill">Saved models · no retraining</span></div>',
         unsafe_allow_html=True,
     )
 
@@ -113,7 +140,7 @@ def show_png(path: Path, caption: str) -> None:
 
 
 def style(fig: go.Figure, height: int = 380, **kw) -> go.Figure:
-    fig.update_layout(height=height, margin=dict(l=10, r=10, t=40, b=10), template="plotly_white",
+    fig.update_layout(height=height, margin=dict(l=10, r=10, t=40, b=10), template="plotly_white", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                       font=dict(color=INK), legend=dict(orientation="h", y=-0.2), **kw)
     return fig
 
@@ -234,9 +261,10 @@ def page_forecast() -> None:
     left, right = st.columns([1, 2])
     with left:
         st.markdown(f"##### Predicted orders — {store}, week of {week:%d-%m-%Y}")
-        st.markdown(f'<div class="big-number">{gb:,.0f}</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="big-caption">orders (≈ {lo:,.0f} – {hi:,.0f}, i.e. ± the model\'s test RMSE of '
-                    f"{rmse:.1f})</div>", unsafe_allow_html=True)
+        st.markdown(f'<div class="hero"><div class="label">Predicted orders this week</div>'
+                    f'<div class="big-number">{gb:,.0f}</div>'
+                    f'<div class="big-caption">likely range ≈ {lo:,.0f} – {hi:,.0f} '
+                    f"(± the model's test RMSE of {rmse:.1f})</div></div>", unsafe_allow_html=True)
         st.caption(f"roll4 = {roll4:.2f} · exact model output: {gb:.3f}")
         if actual is not None:
             m1, m2 = st.columns(2)
@@ -497,9 +525,15 @@ PAGES = {
     "About": page_about,
 }
 
-st.sidebar.markdown("## Navigation")
-choice = st.sidebar.radio("Go to", list(PAGES), label_visibility="collapsed")
-st.sidebar.caption("Quick-commerce food demand · loads saved models only")
+ICONS = {"Demand Forecast": "📈", "Store Types (K-Means)": "🏪", "Demand Regimes (HMM)": "🌦️",
+         "Model Comparison": "📊", "About": "ℹ️"}
+st.sidebar.markdown('<div class="side-brand">🛵 Supply Chain Optimizer</div>'
+                    '<div class="side-sub">Quick-commerce food demand</div>', unsafe_allow_html=True)
+choice = st.sidebar.radio("Go to", list(PAGES), key="nav", format_func=lambda p: f"{ICONS[p]}  {p}",
+                          label_visibility="collapsed")
+st.sidebar.divider()
+st.sidebar.caption("Test MAE: gradient boosting 5.32 · naive 6.76 orders per store-week")
+st.sidebar.caption("Loads saved models only — nothing is retrained.")
 
 try:
     PAGES[choice]()
